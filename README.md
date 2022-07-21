@@ -1,6 +1,6 @@
 <div align="center">
 <img src="public/icon-128.png" alt="logo"/>
-<h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS</h1>
+<h1> Browser Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS + WebExtension Polyfill</h1>
 
 </div>
 
@@ -43,6 +43,7 @@ I couldn't find a boilerplate for React, TypeScript and Tailwind CSS. So here it
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/)
+- [WebExtension Polyfill](https://github.com/mozilla/webextension-polyfill)
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
 
 ## Usage <a name="usage"></a>
@@ -61,7 +62,7 @@ I couldn't find a boilerplate for React, TypeScript and Tailwind CSS. So here it
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
 ### Customization
-As the template has **all** of the potential Chrome extension pages implemented, you likely have to 
+As the template has **all** of the potential Browser extension pages implemented, you likely have to 
 customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:

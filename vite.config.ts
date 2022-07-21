@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import makeManifest from './utils/plugins/make-manifest';
 import copyContentStyle from './utils/plugins/copy-content-style';
+import AutoImport from "unplugin-auto-import/vite";
 
 const root = resolve(__dirname, 'src');
 const pagesDir = resolve(root, 'pages');
 const assetsDir = resolve(root, 'assets');
-const outDir = resolve(__dirname, 'dist');
+const outDir = resolve(__dirname, 'extension');
 const publicDir = resolve(__dirname, 'public');
 
 export default defineConfig({
@@ -18,7 +19,15 @@ export default defineConfig({
       "@pages": pagesDir,
     },
   },
-  plugins: [react(), makeManifest(), copyContentStyle()],
+  plugins: [react(), makeManifest(), copyContentStyle(),
+  AutoImport({
+    imports: [
+      {
+        "webextension-polyfill": [["default", "browser"]],
+      },
+    ],
+    dts: resolve(root, "auto-imports.d.ts"),
+  })],
   publicDir,
   build: {
     outDir,
